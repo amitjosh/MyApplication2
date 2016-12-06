@@ -2,10 +2,11 @@ package com.example.sankum.myapplication;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class Survey extends UserProfile {
+public class Survey extends UserProfile implements View.OnClickListener {
 
     Spinner breed_spinner;
     Spinner age_spinner;
@@ -18,7 +19,7 @@ public class Survey extends UserProfile {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_survey);
 
         breed_spinner=(Spinner) findViewById(R.id.breed_spinner);
         age_spinner= (Spinner) findViewById(R.id.age_spinner);
@@ -29,6 +30,11 @@ public class Survey extends UserProfile {
 
 
 
+
+    }
+
+    @Override
+    public void onClick(View view) {
 
     }
 }

@@ -13,7 +13,8 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-public abstract class UserProfile extends Login implements View.OnClickListener {
+
+public abstract class UserProfile extends Activity implements View.OnClickListener {
 
     // Declare all widgets
     private EditText editText;
@@ -44,7 +45,7 @@ public abstract class UserProfile extends Login implements View.OnClickListener 
         editText = (EditText) findViewById(R.id.editText);
         editText2 = (EditText) findViewById(R.id.editText2);
         editText3 = (EditText) findViewById(R.id.editText3);
-        ratingBar = (RatingBar) findViewById(R.id.ra);
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         ratingBar2 = (RatingBar) findViewById(R.id.ratingBar2);
 
         button.setOnClickListener(this);

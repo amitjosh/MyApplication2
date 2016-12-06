@@ -1,11 +1,11 @@
 package com.example.sankum.myapplication;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class ContactUI extends AppCompatActivity {
+public class ContactUI extends Activity {
     private TextView textViewCTS;
     private TextView textViewSN;
     private TextView textViewAddress;
