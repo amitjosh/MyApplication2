@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class Survey extends Activity {
+public class Survey extends UserProfile {
 
     Spinner breed_spinner;
     Spinner age_spinner;

@@ -1,7 +1,6 @@
 package com.example.sankum.myapplication;
 
 import android.app.Activity;
-import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -50,20 +49,18 @@ public class Login extends Activity implements View.OnClickListener {
                 if (user != null) {
                     // User is signed in
                     //Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    Toast.makeText(MainActivity.this, "User logged in: " + user.getEmail(), Toast.LENGTH_SHORT).show();
-                    Toast.makeText(login.this, "test", Toast.LENGTH_SHORT).show();
-                } else {
+                    Toast.makeText(Login.this, "User logged in: " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                                    } else {
                     // User is signed out
                     //Log.d(TAG, "onAuthStateChanged:signed_out");
-                    Toast.makeText(MainActivity.this, "User Signed Out", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "User Signed Out", Toast.LENGTH_SHORT).show();
                 }
                 // ...
             }
         };
 
     }
-
-    //dsds
+    
 
     @Override
     public void onStart() {
@@ -106,7 +103,7 @@ public class Login extends Activity implements View.OnClickListener {
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-                            Toast.makeText(MainActivity.this, "Authentication failed." + task.getException(),
+                            Toast.makeText(Login.this, "Authentication failed." + task.getException(),
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -125,12 +122,12 @@ public class Login extends Activity implements View.OnClickListener {
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail", task.getException());
-                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                            Toast.makeText(Login.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(MainActivity.this, "Login Successful - moving to update page", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Login Successful - moving to update page", Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(MainActivity.this, ScoreUpdate.class);
+                            Intent intent = new Intent(Login.this, UserProfile.class);
                             startActivity(intent);
                         }
 

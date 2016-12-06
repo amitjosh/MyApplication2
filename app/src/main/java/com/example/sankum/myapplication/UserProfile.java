@@ -13,7 +13,7 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-public abstract class UserProfile extends Activity implements View.OnClickListener {
+public abstract class UserProfile extends Login implements View.OnClickListener {
 
     // Declare all widgets
     private EditText editText;
@@ -32,7 +32,7 @@ public abstract class UserProfile extends Activity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user__profile);
+        setContentView(R.layout.activity_user_profile);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -44,7 +44,7 @@ public abstract class UserProfile extends Activity implements View.OnClickListen
         editText = (EditText) findViewById(R.id.editText);
         editText2 = (EditText) findViewById(R.id.editText2);
         editText3 = (EditText) findViewById(R.id.editText3);
-        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        ratingBar = (RatingBar) findViewById(R.id.ra);
         ratingBar2 = (RatingBar) findViewById(R.id.ratingBar2);
 
         button.setOnClickListener(this);
