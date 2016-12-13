@@ -14,7 +14,6 @@ import android.widget.Adapter;
 import android.widget.FrameLayout;
 import com.example.sankum.myapplication.R;
 
-
 public class SwipeFlingAdapterView extends BaseFlingAdapterView {
 
 
@@ -52,7 +51,12 @@ public class SwipeFlingAdapterView extends BaseFlingAdapterView {
     }
 
 
-
+    /**
+     * A shortcut method to set both the listeners and the adapter.
+     *
+     * @param context  The activity context which extends onFlingListener, OnItemClickListener or both
+     * @param mAdapter The adapter you have to set.
+     */
     public void init(final Context context, Adapter mAdapter) {
         if (context instanceof onFlingListener) {
             mFlingListener = (onFlingListener) context;

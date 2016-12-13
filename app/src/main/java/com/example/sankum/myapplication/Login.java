@@ -1,9 +1,9 @@
 package com.example.sankum.myapplication;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class Login extends Activity implements View.OnClickListener {
+public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private Button buttonLogin;
     private Button buttonRegister;
@@ -32,12 +32,11 @@ public class Login extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         buttonLogin = (Button) findViewById(R.id.buttonLogin);
         buttonLogin.setOnClickListener(this);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
         buttonRegister.setOnClickListener(this);
-        editTextEMail = (EditText) findViewById(R.id.editTextEMail);
+        editTextEMail = (EditText) findViewById(R.id.editTextLogin);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
 
         mAuth = FirebaseAuth.getInstance();
@@ -50,7 +49,7 @@ public class Login extends Activity implements View.OnClickListener {
                     // User is signed in
                     //Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     Toast.makeText(Login.this, "User logged in: " + user.getEmail(), Toast.LENGTH_SHORT).show();
-                                    } else {
+                } else {
                     // User is signed out
                     //Log.d(TAG, "onAuthStateChanged:signed_out");
                     Toast.makeText(Login.this, "User Signed Out", Toast.LENGTH_SHORT).show();
@@ -60,7 +59,6 @@ public class Login extends Activity implements View.OnClickListener {
         };
 
     }
-    
 
     @Override
     public void onStart() {
@@ -127,7 +125,7 @@ public class Login extends Activity implements View.OnClickListener {
                         } else {
                             Toast.makeText(Login.this, "Login Successful - moving to update page", Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(Login.this, UserProfile.class);
+                            Intent intent = new Intent(Login.this, User.class);
                             startActivity(intent);
                         }
 

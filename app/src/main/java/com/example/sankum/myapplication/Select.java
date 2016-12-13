@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.sankum.myapplication.SwipeAction.FlingCardListener;
 import com.example.sankum.myapplication.SwipeAction.SwipeFlingAdapterView;
 
@@ -41,11 +42,11 @@ public class Select extends AppCompatActivity implements FlingCardListener.Actio
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
         al = new ArrayList<>();
-        al.add(new Data("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."));
-        al.add(new Data("http://switchboard.nrdc.org/blogs/dlashof/mission_impossible_4-1.jpg", "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."));
-        al.add(new Data("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."));
-        al.add(new Data("http://switchboard.nrdc.org/blogs/dlashof/mission_impossible_4-1.jpg", "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."));
-        al.add(new Data("http://i.ytimg.com/vi/PnxsTxV8y3g/maxresdefault.jpg", "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."));
+        al.add(new Data("http://www.dogbreedslist.info/uploads/allimg/dog-pictures/Labrador-Retriever-2.jpg", "Labrador Retriever"));
+        al.add(new Data("http://www.dogbreedslist.info/uploads/allimg/dog-pictures/German-Shepherd-Dog-2.jpg", "German Shepherd"));
+        al.add(new Data("http://www.dogbreedslist.info/uploads/allimg/dog-pictures/Golden-Retriever-2.jpg", "Golden Retriever"));
+        al.add(new Data("http://www.dogbreedslist.info/uploads/allimg/dog-pictures/Bulldog-2.jpg", "Bulldog"));
+        al.add(new Data("http://www.dogbreedslist.info/uploads/allimg/dog-pictures/Beagle-2.jpg", "Beagle"));
 
         myAppAdapter = new MyAppAdapter(al, Select.this);
         flingContainer.setAdapter(myAppAdapter);
@@ -163,7 +164,7 @@ public class Select extends AppCompatActivity implements FlingCardListener.Actio
             }
             viewHolder.DataText.setText(parkingList.get(position).getDescription() + "");
 
-            Glide.with(MainActivity.this).load(parkingList.get(position).getImagePath()).into(viewHolder.cardImage);
+            Glide.with(Select.this).load(parkingList.get(position).getImagePath()).into(viewHolder.cardImage);
 
             return rowView;
         }

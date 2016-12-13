@@ -1,12 +1,12 @@
 package com.example.sankum.myapplication;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
 
-public class Survey extends UserProfile implements View.OnClickListener {
+public class Survey extends AppCompatActivity implements View.OnClickListener {
 
     Spinner breed_spinner;
     Spinner age_spinner;
@@ -21,11 +21,11 @@ public class Survey extends UserProfile implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_survey);
 
-        breed_spinner=(Spinner) findViewById(R.id.breed_spinner);
-        age_spinner= (Spinner) findViewById(R.id.age_spinner);
-        color_spinner=(Spinner) findViewById(R.id.color_spinner);
-        energylevel_spinner=(Spinner) findViewById(R.id.energylevel_spinner);
-        submit_button=(Button) findViewById(R.id.submit_button);
+        breed_spinner=(Spinner) findViewById(R.id.spinner5);
+        age_spinner= (Spinner) findViewById(R.id.spinner2);
+        color_spinner=(Spinner) findViewById(R.id.spinner4);
+        energylevel_spinner=(Spinner) findViewById(R.id.spinner6);
+        submit_button=(Button) findViewById(R.id.SUBMIT);
 
 
 
