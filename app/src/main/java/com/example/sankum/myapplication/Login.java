@@ -123,7 +123,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             Toast.makeText(Login.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(Login.this, "Login Successful - moving to update page", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Login Successful - moving to profile page", Toast.LENGTH_SHORT).show();
 
                             Intent intent = new Intent(Login.this, User.class);
                             startActivity(intent);
