@@ -37,7 +37,7 @@ public class Select extends AppCompatActivity implements FlingCardListener.Actio
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select);
+        setContentView(R.layout.activity_main);
 
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
