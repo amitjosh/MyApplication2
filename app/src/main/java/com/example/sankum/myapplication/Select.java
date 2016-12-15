@@ -1,6 +1,7 @@
 package com.example.sankum.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -71,6 +72,8 @@ public class Select extends AppCompatActivity implements FlingCardListener.Actio
 
                 al.remove(0);
                 myAppAdapter.notifyDataSetChanged();
+                Intent intent = new Intent(Select.this, ContactUI.class);
+                startActivity(intent);
             }
 
             @Override
@@ -85,7 +88,7 @@ public class Select extends AppCompatActivity implements FlingCardListener.Actio
                 view.findViewById(R.id.background).setAlpha(0);
                 view.findViewById(R.id.item_swipe_right_indicator).setAlpha(scrollProgressPercent < 0 ? -scrollProgressPercent : 0);
                 view.findViewById(R.id.item_swipe_left_indicator).setAlpha(scrollProgressPercent > 0 ? scrollProgressPercent : 0);
-            }
+                ;}
         });
 
 
@@ -151,7 +154,7 @@ public class Select extends AppCompatActivity implements FlingCardListener.Actio
             if (rowView == null) {
 
                 LayoutInflater inflater = getLayoutInflater();
-                rowView = inflater.inflate(R.layout.item, parent, false);
+                rowView = inflater.inflate(R.layout.activity_select, parent, false);
                 // configure view holder
                 viewHolder = new ViewHolder();
                 viewHolder.DataText = (TextView) rowView.findViewById(R.id.bookText);
